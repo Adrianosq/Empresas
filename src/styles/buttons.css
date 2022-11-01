@@ -1,0 +1,24 @@
+.button{
+    width: 142px;
+    height: 48px;
+    font-weight: var(--bold);
+    font-size: var(--font-18);
+    cursor: pointer;
+}
+
+.login{
+    color: var(--color-brand);
+    border: 1px solid var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadastrar{
+    color: var(--color-white);
+    background-color: var(--color-brand);
+    border: 1px solid var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}

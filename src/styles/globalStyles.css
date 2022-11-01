@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+}
+  
+:root {
+    --color-brand: #4200ff;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-red: #ce4646;
+    --color-green: #4ba036;
+
+    --font-16: 1rem;
+    --font-18: 1.125rem;
+
+    --regular: 400;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+}
+  
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+  
