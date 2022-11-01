@@ -12,3 +12,18 @@ export function cadastrarPage() {
         window.location.replace('/src/pages/cadastrarPage.html')
     })
 }
+
+export function homePage(){
+    const btn = document.querySelector('.home')
+
+    btn.addEventListener('click', () => {
+        window.location.replace('/index.html')
+    })
+}
+
+export function cadastrarPageBottom(){
+    const btnWhite = document.querySelector('.white')
+    btnWhite.addEventListener('click', () => {
+        window.location.replace('/src/pages/cadastrarPage.html')
+    })
+}
