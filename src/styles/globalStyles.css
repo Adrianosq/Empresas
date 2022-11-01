@@ -10,9 +10,13 @@
     --color-brand: #4200ff;
     --color-white: #FFFFFF;
     --color-black: #000000;
-    --color-red: #ce4646;
-    --color-green: #4ba036;
+    --color-gray100: hsl(210, 11%, 15%);
 
+    --alert100: #ce4646;
+    --sucess100: #4ba036;
+    --box-shadow-color: rgba(0, 0, 0, 0.25);
+
+    --font-14: 0.875rem;
     --font-16: 1rem;
     --font-18: 1.125rem;
 
