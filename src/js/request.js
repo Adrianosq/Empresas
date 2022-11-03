@@ -55,3 +55,29 @@ async function authLogin(data) {
         console.log(err)
     }
 }
+
+export async function criarUser(data) {
+    try{
+        const request = await fetch(`${baseUrl}/auth/register`, {
+            method: 'POST', 
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        })
+
+        const cadastro = await request.json()
+
+        if(request.ok){
+            toast("Sucesso!", "Cadastro realizado com sucesso!")
+            
+            setTimeout(() => {
+                window.location.replace('/src/pages/loginPage.html')
+            }, 4000);
+        } else{
+            toast('Error', cadastro.error)
+        }
+    } catch(err){
+        console.log(err)
+    }
+}
