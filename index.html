@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/src/styles/globalStyles.css">
     <link rel="stylesheet" href="/src/styles/buttons.css">
     <link rel="stylesheet" href="/src/styles/menuResponsivo.css">
+    <link rel="stylesheet" href="/src/styles/inputs.css">
     <link rel="stylesheet" href="/src/styles/homePage.css">
     <title>Home Page</title>
 </head>
@@ -33,7 +34,17 @@
                     <div class="line3"></div>
                 </div>
             </nav>
+           
         </header>
+        <section class="home-page container">
+            <div><img  class="home-page-img" src="/src/assets/img/homePage.png" alt="homePage"></div>
+            <div>
+                <select class='select-filter' name="">
+                    <option>Todos os Setores</option>
+                </select>
+                <ul class="card-empresas"></ul>
+            </div>
+        </section>
     </main>
     <script type="module" src="/src/js/homePage.js"></script>
 </body>

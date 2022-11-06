@@ -294,6 +294,34 @@ export async function editUserLogado(data) {
     }
 }
 
+export async function getSectores() {
+    try{
+        const request = await fetch(`${baseUrl}/sectors`, {
+            method: 'GET', 
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        return request.json()
+    }catch(err){
+        console.log(err)
+    }
+}
+
+export async function empresasPorSetor(setor) {
+    try{
+        const request = await fetch(`${baseUrl}/companies/${setor}`, {
+            method: 'GET', 
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        return request.json()
+    }catch(err){
+        console.log(err)
+    }
+}
+
 
 
 

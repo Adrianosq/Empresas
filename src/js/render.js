@@ -1,6 +1,6 @@
 import { departamentoDelete, editarDepartamento, userDelete, userEdit, userLogadoEdit, visibilityDepartamento } from "./forms.js"
 import { openModal } from "./modal.js"
-import { getAllDepartamentos, getAllEmpresas, getAllUsers, userLogado, userSemDepartamento } from "./request.js"
+import { empresasPorSetor, getAllDepartamentos, getAllEmpresas, getAllUsers, getSectores, userLogado, userSemDepartamento } from "./request.js"
 
 export async function renderUserCadastrados() {
     const card = document.querySelector('.user-cadastrados-card')
@@ -170,5 +170,70 @@ export async function renderUserLogado() {
     divInfo.classList.add('div-info')
 
     user.append(divUsername, divInfo)
+}
+
+export async function homePageFilter() {
+    const select = document.querySelector('.select-filter')
+
+    const sectors = await getSectores()
+
+    sectors.forEach(elem => {
+        const option = cardSelectFilter(elem)
+
+        select.append(option)
+    })
+    select.addEventListener('click', async (event) => {
+        const value = event.target.value
+        if(value === 'Todos os Setores'){
+            const data = await getAllEmpresas()
+            homePageAllEmpresas(data)
+        } else{
+            const data = await empresasPorSetor(value)
+            homePageAllEmpresas(data)
+        }
+    })
+}
+
+function cardSelectFilter({uuid, description}) {
+    const option = document.createElement('option')
+
+    option.innerText = description
+    option.value = description
+
+    return option
+}
+
+export async function homePageAllEmpresas(data) {
+
+    const card = document.querySelector('.card-empresas')
+
+    card.innerHTML = ''
+
+    data.forEach(elem => {
+        const cardEmpresas = homePageRenderEmpresas(elem)
+        card.append(cardEmpresas)
+    })
+}
+
+function homePageRenderEmpresas({name, opening_hours, sectors}){
+    const cardLi = document.createElement('li')
+    const cardName = document.createElement('h2')
+    const cardOpen = document.createElement('p')
+    const cardSector = document.createElement('p')
+
+    cardName.innerText = name
+    cardName.classList.add('home-page-card-name')
+
+    cardOpen.innerText = opening_hours
+    cardOpen.classList.add('home-page-card-open')
+
+    cardSector.innerText = sectors.description
+    cardSector.classList.add('home-page-card-sector')
+
+    cardLi.classList.add('home-page-card-li')
+    cardLi.append(cardName, cardOpen, cardSector)
+
+    return cardLi
+    
 }
 

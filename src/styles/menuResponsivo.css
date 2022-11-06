@@ -98,6 +98,7 @@
     .menu.active{
         transform: translateX(0);
         top: 15vh;
+        z-index: 1;
     }
 
     .mobile-menu-icon.active .line1{

@@ -23,6 +23,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-color: var(--color-white);
 }
 
 .cadastrar{
