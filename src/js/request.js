@@ -261,6 +261,39 @@ export async function contratarFuncionario(data){
     }
 }
 
+export async function userLogado(){
+    try{
+        const request = await fetch(`${baseUrl}/users/profile`, {
+            method: 'GET', 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            },
+        })
+        return request.json()
+    }catch(err){
+        console.log(err)
+    }
+}
+
+export async function editUserLogado(data) {
+    try{
+        const request = await fetch(`${baseUrl}/users`, {
+            method: 'PATCH', 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        })
+        if(request.ok){
+            toast('Sucesso!', 'Informações atualizadas com sucesso!')
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
+
 
 
 

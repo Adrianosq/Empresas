@@ -1,5 +1,5 @@
-import { listarAllDepartamentos, renderUserCadastrados } from "./render.js"
-import { contratarFuncionario, criarDepartamentoRequest, deleteDepartamento, deleteUser, editDepartamento, userEditAdm } from "./request.js"
+import { listarAllDepartamentos, renderUserCadastrados, renderUserLogado } from "./render.js"
+import { contratarFuncionario, criarDepartamentoRequest, deleteDepartamento, deleteUser, editDepartamento, editUserLogado, userEditAdm } from "./request.js"
 
 export function userDelete(id, name){
     const formulario = document.createElement("form")
@@ -216,11 +216,7 @@ export function visibilityDepartamento(data, name, description, companies, depar
                     edit[name] = value
                 }
             })
-
-            console.log()
         await contratarFuncionario({...edit, department_uuid})
-        // await listarAllDepartamentos()
-      
     })
 
     return formulario
@@ -233,4 +229,37 @@ function cardSelectUser({username, uuid}) {
     option.value = uuid
 
     return option
+}
+
+export function userLogadoEdit(username, email){
+    const formulario = document.createElement("form")
+    formulario.classList.add("formbase")
+
+
+    formulario.insertAdjacentHTML("beforeend", `
+        <h3>Editar Perfil</h3>
+        <input name='username' value='${username}'placeholder='Informe o seu nome'></input>
+        <input name='email' value='${email}'placeholder='Informe o seu email'></input>
+        <input name='password' placeholder='Informe sua nova senha'></input>
+        <div class="div-btn">
+            <button class="button-form blue">Editar Perfil</button>
+        </div>
+    `)
+
+    formulario.addEventListener("submit", async (event) => {
+        event.preventDefault()
+
+            const inputs = [...event.target]
+            const edit = {}
+    
+            inputs.forEach(({name, value}) =>{
+                if(name){
+                    edit[name] = value
+                }
+            })
+        editUserLogado(edit)
+        renderUserLogado()
+    })
+
+    return formulario
 }

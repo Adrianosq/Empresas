@@ -91,3 +91,10 @@
     width: 157px;
     height: 48px;
 }  
+
+.btn-edit{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    top: 45px;
+}

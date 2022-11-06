@@ -1,6 +1,6 @@
-import { departamentoDelete, editarDepartamento, userDelete, userEdit, visibilityDepartamento } from "./forms.js"
+import { departamentoDelete, editarDepartamento, userDelete, userEdit, userLogadoEdit, visibilityDepartamento } from "./forms.js"
 import { openModal } from "./modal.js"
-import { getAllDepartamentos, getAllEmpresas, getAllUsers, userSemDepartamento } from "./request.js"
+import { getAllDepartamentos, getAllEmpresas, getAllUsers, userLogado, userSemDepartamento } from "./request.js"
 
 export async function renderUserCadastrados() {
     const card = document.querySelector('.user-cadastrados-card')
@@ -134,5 +134,41 @@ function renderAllDepartamentos({companies, name, description, uuid}) {
     cardLi.append(cardUsername, cardDepartment, cardComapanyName, cardDivButton)
     
     return cardLi
+}
+
+export async function renderUserLogado() {
+    const {username, email, professional_level, kind_of_work} = await userLogado()
+    
+    const user = document.querySelector('.user-logado')
+    const userName = document.createElement('h2')
+    const userEmail = document.createElement('p')
+    const userLevel = document.createElement('p')
+    const userWork = document.createElement('p')
+    const divUsername = document.createElement('div')
+    const divInfo = document.createElement('div')
+    const edit = document.createElement('img')
+
+    userName.innerText = username
+
+    divUsername.append(userName)
+    divUsername.classList.add('div-user')
+
+    userEmail.innerText = email
+
+    userLevel.innerText = professional_level
+
+    userWork.innerText = kind_of_work
+
+    edit.src = "/src/assets/img/edit.png"
+    edit.classList.add('btn-edit')
+    edit.addEventListener('click', () => {
+        const form = userLogadoEdit(username, email)
+        openModal(form)
+    })
+
+    divInfo.append(userEmail, userLevel, userWork, edit)
+    divInfo.classList.add('div-info')
+
+    user.append(divUsername, divInfo)
 }
 
