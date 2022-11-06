@@ -12,3 +12,18 @@ input::placeholder{
     color: rgba(0, 0, 0, 0.5);
    
 }
+
+select{
+    width: 422px;
+    height: 52px;
+    background-color: var(--color-whitw);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
+}
+
+.select-empresas{
+    width: 282px;
+    height: 32px;
+    border: 1px solid var(--color-black);
+    border-radius: 15px;
+}

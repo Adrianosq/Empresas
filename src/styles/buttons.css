@@ -13,6 +13,7 @@
     font-size: var(--font-18);
     cursor: pointer;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .login{
@@ -21,6 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .cadastrar{
@@ -29,7 +31,8 @@
     border: 1px solid var(--color-brand);
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center; 
+    cursor: pointer; 
 }
 
 .home{
@@ -38,6 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .blue{
@@ -47,6 +51,7 @@
     display: flex;
     align-items: center;
     justify-content: center;  
+    cursor: pointer;
 }
 
 .white{
@@ -55,4 +60,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
+
+.logout{
+    color: var(--color-brand);
+    border: 1px solid var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.delete{
+    background-color: var(--sucess100);
+    border: 1px solid var(--sucess100);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.card-btn{
+    cursor: pointer;
+}
+
+.contratar{
+    background-color: var(--sucess100);
+    border: 1px solid var(--sucess100);
+    color: var(--color-white);
+    cursor: pointer;
+    width: 157px;
+    height: 48px;
+}  

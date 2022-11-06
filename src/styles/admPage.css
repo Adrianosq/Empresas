@@ -1,0 +1,82 @@
+.departamento{
+    /* display: flex; */
+}
+
+
+
+.departamento-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.departamento-card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 35px 60px;
+    background-color: var(--color-grey);
+    height: 385px;
+    overflow-y: auto;
+}
+
+.departamento-card::-webkit-scrollbar{
+    background-color: var(--color-brand);
+    width: 5px;
+}
+
+.user-cadastrados-title{
+    font-weight: var(--bold);
+    font-size: var(--font-30);
+    color: var(--color-black);
+}
+
+.user-cadastrados-card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 35px 60px;
+    background-color: var(--color-grey);
+    height: 385px;
+    overflow-y: auto;
+}
+
+.user-cadastrados-card::-webkit-scrollbar{
+    background-color: var(--color-brand);
+    width: 5px;
+}
+.card-list{
+    width: 489px;
+    height: 196px;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-brand);
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-list > div{
+    position: absolute;
+    top: 110px;
+    right: 70px;
+    display: flex;
+    gap: 20px;
+}
+
+.card-list > h2{
+    font-weight: var(--bold);
+    font-size: var(--font-20);
+    color: var(--color-black);
+}
+
+.card-list > p{
+    font-weight: var(--regular);
+    font-size: var(--font-18);
+    color: var(--color-black);
+}
