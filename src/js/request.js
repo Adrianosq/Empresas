@@ -1,6 +1,8 @@
 import { toast } from "./toasts.js"
 
 const baseUrl = "http://localhost:6278"
+const token = JSON.parse(localStorage.getItem("@token"))
+
 
 export async function loginUser(data){
     try{
@@ -81,3 +83,186 @@ export async function criarUser(data) {
         console.log(err)
     }
 }
+
+export async function getAllUsers() {
+    try{
+        const request = await fetch(`${baseUrl}/users`, {
+            method: "GET", 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+        return request.json()
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+export async function deleteUser(id) {
+    try{
+        const request = await fetch(`${baseUrl}/admin/delete_user/${id}`, {
+            method: "DELETE", 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+        if(request.ok){
+            toast('Sucesso!', 'Usuário deletado com sucesso!')
+        }
+    }catch(err) {
+        console.log(err)
+    }
+}
+
+export async function userEditAdm(id, data){
+    try{
+        const request = await fetch(`${baseUrl}/admin/update_user/${id}`, {
+            method: 'PATCH', 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        })
+        if(request.ok) {
+            toast('Sucesso!', 'Informações atualizadas com sucesso!')
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
+
+export async function getAllEmpresas() {
+    try{
+        const request = await fetch(`${baseUrl}/companies`, {
+            method: 'GET', 
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+
+        const empresas = await request.json()
+
+        return empresas
+
+    }catch(err) {
+        console.log(err)
+    }
+}
+
+export async function getAllDepartamentos() {
+    try{
+        const request = await fetch(`${baseUrl}/departments`, {
+            method: 'GET', 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+        
+        const departamentos = await request.json()
+
+        return departamentos
+    }catch(err) {
+        console.log(err)
+    }
+}
+
+export async function criarDepartamentoRequest(data) {
+    try{
+        const request = await fetch(`${baseUrl}/departments`, {
+            method: 'POST', 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        })
+        console.log(request)
+        if(request.ok){
+            console.log('oi')
+            toast('Sucesso!', 'Departamento criado com sucesso!')
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
+
+export async function deleteDepartamento(id) {
+    try{
+        const request = await fetch(`${baseUrl}/departments/${id}`, {
+            method: "DELETE", 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+        if(request.ok){
+            toast('Sucesso!', 'Departamento deletado com sucesso!')
+        }
+    } catch(err){
+        console.log(err)
+    }
+}
+
+export async function editDepartamento(id, data) {
+    try{
+        const request = await fetch(`${baseUrl}/departments/${id}`, {
+            method: 'PATCH', 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        })
+        if(request.ok) {
+            toast('Sucesso!', 'Informações atualizadas com sucesso!')
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
+
+export async function userSemDepartamento() {
+    try{
+        const request = await fetch(`${baseUrl}/admin/out_of_work`, {
+            method: 'GET', 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+        
+        const departamentos = await request.json()
+
+        return departamentos
+    }catch(err) {
+        console.log(err)
+    }
+}
+
+export async function contratarFuncionario(data){
+    try{
+        const request = await fetch(`${baseUrl}/departments/hire/`, {
+            method: 'PATCH', 
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        })
+        if(request.ok){
+            toast('Sucesso!', 'Usuário contratado com sucesso')
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
+
+
+
+
+
+
