@@ -1,0 +1,70 @@
+.home-page{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.home-page-img {
+    width: 550px;
+    height: 743px;
+}
+.card-empresas{
+    display: flex;
+    gap: 35px;
+    margin-top: 10px;
+    height: 610px;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.card-empresas::-webkit-scrollbar{
+    background-color: var(--color-brand);
+    width: 5px;
+}
+.home-page-card-li{
+    border-bottom: 1px solid var(--color-brand);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.home-page-card-name{
+    font-weight: var(--bold);
+    font-size: var(--font-20);
+    color: var(--color-black);
+}
+
+.home-page-card-open{
+    font-weight: var(--regular);
+    font-size: var(--font-16);
+    color: var(--color-black);
+}
+
+.home-page-card-sector{
+    height: 32px;
+    border: 1px solid var(--color-brand);
+    border-radius: 255px;
+    width: 110px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: var(--color-brand);
+}
+
+@media (max-width: 838px) {
+    .home-page-img{
+        display: none;
+    }
+    .card-empresas{
+        overflow-x: auto;
+        flex-direction: row;
+        width: 220px;
+    }
+    .select-filter{
+        width: 220px;
+    }
+
+    .home-page-card-li{
+        width: 100px;
+    }
+}

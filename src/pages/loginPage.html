@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/globalStyles.css">
+    <link rel="stylesheet" href="/src/styles/buttons.css">
+    <link rel="stylesheet" href="/src/styles/menuResponsivo.css">
+    <link rel="stylesheet" href="/src/styles/inputs.css">
+    <link rel="stylesheet" href="/src/styles/toast.css">
+    <link rel="stylesheet" href="/src/styles/loginPage.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <main>
+        <header class="header">
+            <nav class="nav">
+                <div class="header-logo">
+                    <div class="logo">
+                    </div>
+                    <h2 class="header-titulo">Kenzie Empresas</h2>
+                </div>
+                <ul class="menu">
+                    <li class="button home">Home</li>
+                    <li class="button cadastrar">Cadastrar</li>
+                </ul>
+                
+                <div class="mobile-menu-icon">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </header>
+        <section class="section-login">
+            <form class="form-login">
+                <h2>Login</h2>
+                <p>Preencha os campos para realizar o login</p>
+                <input type="text" name="email" placeholder="Digite o seu e-mail..">
+                <input type="password" name="password" placeholder="Digite a sua senha..">
+                <button class= "button-form blue"type="submit">Login</button>
+            </form>
+            <div class="form-footer">
+                <p>ou</p>
+                <button class="button-form white">Cadastre-se</button>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="/src/js/loginPage.js"></script>
+</body>
+</html>

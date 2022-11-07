@@ -1,0 +1,101 @@
+.button{
+    width: 142px;
+    height: 48px;
+    font-weight: var(--bold);
+    font-size: var(--font-18);
+    cursor: pointer;
+}
+
+.button-form{
+    width: 422px;
+    height: 48px;
+    font-weight: var(--bold);
+    font-size: var(--font-18);
+    cursor: pointer;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.login{
+    color: var(--color-brand);
+    border: 1px solid var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--color-white);
+}
+
+.cadastrar{
+    color: var(--color-white);
+    background-color: var(--color-brand);
+    border: 1px solid var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    cursor: pointer; 
+}
+
+.home{
+    color: var(--color-brand);
+    border: 1px solid var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.blue{
+    color: var(--color-white);
+    background-color: var(--color-brand);
+    border: 1px solid var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    cursor: pointer;
+}
+
+.white{
+    color: var(--color-brand);
+    border: 1px solid var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.logout{
+    color: var(--color-brand);
+    border: 1px solid var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.delete{
+    background-color: var(--sucess100);
+    border: 1px solid var(--sucess100);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.card-btn{
+    cursor: pointer;
+}
+
+.contratar{
+    background-color: var(--sucess100);
+    border: 1px solid var(--sucess100);
+    color: var(--color-white);
+    cursor: pointer;
+    width: 157px;
+    height: 48px;
+}  
+
+.btn-edit{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    top: 45px;
+}

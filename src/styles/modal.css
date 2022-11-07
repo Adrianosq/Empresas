@@ -1,0 +1,46 @@
+.modal-background{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.modal-container{
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.modal-close{
+    padding: 10px 15px;
+    font-size: 20px;
+    border: none;
+    color: var(--gray500);
+    background:none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.formbase{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.formbase > h3{
+    font-weight: var(--bold);
+    font-size: var(--font-28);
+    color: var(--color-black);
+
+}
